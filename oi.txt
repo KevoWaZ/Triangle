@@ -1,0 +1,17 @@
+La loi des cosinus et la loi des sinus sont deux formules trigonométriques qui permettent de résoudre des triangles non rectangles en utilisant les mesures de leurs côtés et/ou de leurs angles. Voici dans quelles situations vous pouvez utiliser chacune de ces lois :
+
+    Loi des cosinus (Cosine Law) :
+        Utilisation : La loi des cosinus est utilisée pour résoudre un triangle lorsque vous connaissez les mesures de deux côtés et l'angle compris entre ces deux côtés (SSA : Side-Side-Angle).
+        Formule :
+        a^2 = b^2 + c^2 - 2bc * cos(A)
+        b^2 = a^2 + c^2 - 2ac * cos(B)
+        c^2 = a^2 + b^2 - 2ab * cos(C)
+        Remarque : Il est important que l'angle donné soit l'angle compris entre les deux côtés dont vous connaissez les mesures.
+
+    Loi des sinus (Sine Law) :
+        Utilisation : La loi des sinus est utilisée pour résoudre un triangle lorsque vous connaissez soit les mesures de deux angles et le côté compris entre ces deux angles (ASA : Angle-Side-Angle), soit les mesures de deux côtés et l'angle opposé à l'un de ces côtés (SAS : Side-Angle-Side).
+        Formule :
+        (a / sin(A)) = (b / sin(B)) = (c / sin(C))
+        Remarque : La loi des sinus peut être utilisée dans les deux configurations (ASA ou SAS), tant que vous avez les mesures appropriées d'angles et de côtés.
+
+Il est important de noter que si vous connaissez les mesures de tous les côtés d'un triangle (SSS : Side-Side-Side) ou les mesures de tous les angles (AAA : Angle-Angle-Angle), vous pouvez également utiliser ces informations pour résoudre le triangle en utilisant les formules trigonométriques.
