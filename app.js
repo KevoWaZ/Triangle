@@ -10,16 +10,17 @@ let hauteurC = document.getElementById("hauteurC")
 let aire = document.getElementById("aire")
 let btnAngles = document.getElementById("calcul2Angles")
 let btn3C = document.getElementById("calcul3C")
-let btnSAS = document.getElementById("calculSAS")
-let btnASA = document.getElementById("calculASA")
+let btnLAL = document.getElementById("calculLAL")
+let btnALA = document.getElementById("calculALA")
 let btnLLA = document.getElementById("calculLLA")
+let btnAAL = document.getElementById("calculAAL")
 let btnChercher = document.getElementById("chercher")
 let btnReset = document.getElementById("reset")
 
 
 // TROUVER TOUTES LES VALEURS D'UN TRIANGLE A PARTIR DES COTES CAS SSS
 
-function coteAF() {
+function cote3() {
         // Calculer le cosinus de l'angle Alpha (A) en utilisant la loi des cosinus
         let cosAlpha = (coteB.value ** 2 + coteC.value ** 2 - coteA.value ** 2) / (2 * coteB.value * coteC.value)
 
@@ -50,7 +51,7 @@ function coteAF() {
 }
 
 btn3C.onclick = function () {
-    coteAF()
+    cote3()
 }
 
 
@@ -98,7 +99,7 @@ btnAngles.onclick = function () {
 // TROUVER A PARTIR DU COTE ANGLE COTE CAS SAS Un angle et les deux côtés adjacents
 
 
-function SAS_A_Gamma_B() {
+function LAL_A_Gamma_B() {
         let angleGammaRadiansSAS = (angleGamma.value * Math.PI) / 180
 
         coteC.value = (Math.sqrt(coteA.value ** 2 + coteB.value ** 2 - 2 * coteA.value * coteB.value * Math.cos(angleGammaRadiansSAS))).toFixed(3)
@@ -123,7 +124,7 @@ function SAS_A_Gamma_B() {
 }
 
 
-function SAS_B_Alpha_C() {
+function LAL_B_Alpha_C() {
         let angleAlphaRadiansSAS = (angleAlpha.value * Math.PI) / 180
 
         coteA.value = (Math.sqrt(coteB.value ** 2 + coteC.value ** 2 - 2 * coteB.value * coteC.value * Math.cos(angleAlphaRadiansSAS))).toFixed(3)
@@ -152,7 +153,7 @@ function SAS_B_Alpha_C() {
 }
 
 
-function SAS_C_Beta_A() {
+function LAL_C_Beta_A() {
         let angleBetaRadiansSAS = (angleBeta.value * Math.PI) / 180
 
         coteB.value = (Math.sqrt(coteC.value ** 2 + coteA.value ** 2 - 2 * coteC.value * coteA.value * Math.cos(angleBetaRadiansSAS))).toFixed(3)
@@ -181,7 +182,7 @@ function SAS_C_Beta_A() {
 }
 
 
-btnSAS.onclick = function SAS_Search() {
+btnLAL.onclick = function LAL_Search() {
     const sideAValue = parseFloat(coteA.value);
     const sideBValue = parseFloat(coteB.value);
     const sideCValue = parseFloat(coteC.value);
@@ -194,11 +195,11 @@ btnSAS.onclick = function SAS_Search() {
 
     if (numberOfSidesEntered === 2 && numberOfAnglesEntered === 1) {
         if (!isNaN(sideAValue) && !isNaN(sideBValue) && !isNaN(angleGammaValue)) {
-            SAS_A_Gamma_B();
+            LAL_A_Gamma_B();
         } else if (!isNaN(sideBValue) && !isNaN(sideCValue) && !isNaN(angleAlphaValue)) {
-            SAS_B_Alpha_C();
+            LAL_B_Alpha_C();
         } else if (!isNaN(sideCValue) && !isNaN(sideAValue) && !isNaN(angleBetaValue)) {
-            SAS_C_Beta_A();
+            LAL_C_Beta_A();
         } else {
             alert("Les valeurs entrées ne sont pas valides pour résoudre un triangle SAS.");
         }
@@ -210,7 +211,7 @@ btnSAS.onclick = function SAS_Search() {
 
 // // TROUVER A PARTIR de Deux angles et le côté commun CAS ASA
 
-function ASA_Beta_C_Alpha() {
+function ALA_Beta_C_Alpha() {
         
         angleGamma.value = 180 - angleAlpha.value - angleBeta.value
 
@@ -227,7 +228,7 @@ function ASA_Beta_C_Alpha() {
         aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
 }
 
-function ASA_Alpha_B_Gamma() {
+function ALA_Alpha_B_Gamma() {
         
         angleBeta.value = 180 - angleAlpha.value - angleGamma.value
 
@@ -245,7 +246,7 @@ function ASA_Alpha_B_Gamma() {
         aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
 }
 
-function ASA_Gamma_A_Beta() {
+function ALA_Gamma_A_Beta() {
         
         angleAlpha.value = 180 - angleBeta.value - angleGamma.value
 
@@ -262,7 +263,7 @@ function ASA_Gamma_A_Beta() {
         aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
 }
 
-btnASA.onclick = function ASA_Search() {
+btnALA.onclick = function ALA_Search() {
         const sideAValue = parseFloat(coteA.value);
         const sideBValue = parseFloat(coteB.value);
         const sideCValue = parseFloat(coteC.value);
@@ -275,11 +276,11 @@ btnASA.onclick = function ASA_Search() {
 
         if(numberOfSidesEntered === 1 && numberOfAnglesEntered === 2) {
             if (!isNaN(angleAlphaValue) && !isNaN(angleBetaValue) && !isNaN(sideCValue)) {
-                ASA_Beta_C_Alpha()
+                ALA_Beta_C_Alpha()
             } else if (!isNaN(angleAlphaValue) && !isNaN(angleGammaValue) && !isNaN(sideBValue)) {
-                ASA_Alpha_B_Gamma()
+                ALA_Alpha_B_Gamma()
             } else if (!isNaN(angleGammaValue) && !isNaN(sideAValue) && !isNaN(angleBetaValue)) {
-                ASA_Gamma_A_Beta()
+                ALA_Gamma_A_Beta()
             }
         }
 }
@@ -386,48 +387,6 @@ function LLA_C_A_Gamma() {
 }
 
 
-btnChercher.onclick = function() {
-    const sideAValue = parseFloat(coteA.value);
-    const sideBValue = parseFloat(coteB.value);
-    const sideCValue = parseFloat(coteC.value);
-    const angleAlphaValue = parseFloat(angleAlpha.value);
-    const angleBetaValue = parseFloat(angleBeta.value);
-    const angleGammaValue = parseFloat(angleGamma.value);
-
-    const numberOfSidesEntered = [sideAValue, sideBValue, sideCValue].filter((value) => !isNaN(value)).length;
-    const numberOfAnglesEntered = [angleAlphaValue, angleBetaValue, angleGammaValue].filter((value) => !isNaN(value)).length;
-
-    if (numberOfSidesEntered === 2 && numberOfAnglesEntered === 1) {
-        if (!isNaN(sideAValue) && !isNaN(sideBValue) && !isNaN(angleGammaValue)) {
-            SAS_A_Gamma_B()
-        } else if (!isNaN(sideBValue) && !isNaN(sideCValue) && !isNaN(angleAlphaValue)) {
-            SAS_B_Alpha_C()
-        } else if (!isNaN(sideCValue) && !isNaN(sideAValue) && !isNaN(angleBetaValue)) {
-            SAS_C_Beta_A()
-        }
-    }
-
-    if (numberOfSidesEntered === 1 && numberOfAnglesEntered === 2) {
-        if (!isNaN(angleAlphaValue) && !isNaN(angleBetaValue) && !isNaN(sideCValue)) {
-            ASA_Beta_C_Alpha()
-        } else if (!isNaN(angleAlphaValue) && !isNaN(angleGammaValue) && !isNaN(sideBValue)) {
-            ASA_Alpha_B_Gamma()
-        } else if (!isNaN(angleGammaValue) && !isNaN(sideAValue) && !isNaN(angleBetaValue)) {
-            ASA_Gamma_A_Beta()
-        } 
-    }
-
-    if (numberOfSidesEntered === 2 && numberOfAnglesEntered === 1) {
-        if (!isNaN(sideBValue) && !isNaN(sideCValue) && !isNaN(angleBetaValue)) {
-            LLA_B_C_Beta()
-        } else if (!isNaN(sideAValue) && !isNaN(sideBValue) && !isNaN(angleAlphaValue)) {
-            LLA_A_B_Alpha()
-        } else if (!isNaN(sideCValue) && !isNaN(sideAValue) && !isNaN(angleGammaValue)) {
-            LLA_C_A_Gamma()
-        }
-    }
-}
-
 btnLLA.onclick = function () {
     const sideAValue = parseFloat(coteA.value);
     const sideBValue = parseFloat(coteB.value);
@@ -446,6 +405,163 @@ btnLLA.onclick = function () {
             LLA_A_B_Alpha()
         } else if (!isNaN(sideCValue) && !isNaN(sideAValue) && !isNaN(angleGammaValue)) {
             LLA_C_A_Gamma()
+        }
+    }
+}
+
+
+function AAL_Gamma_Beta_C() {
+        angleAlpha.value = 180 - angleGamma.value - angleBeta.value
+
+        angleGammaRadians = angleGamma.value * (Math.PI / 180)
+
+        angleBetaRadians = angleBeta.value * (Math.PI / 180)
+
+        sinC = Math.sin(angleGammaRadians)
+        sinB = Math.sin(angleBetaRadians)
+
+        coteB.value = sinB / sinC * coteC.value
+
+        angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
+        sinA = Math.sin(angleAlphaRadians)
+
+        coteA.value = sinA / sinC * coteC.value
+
+        demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
+
+        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+
+        hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
+        hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
+        hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+
+}
+
+function AAL_Alpha_Gamma_A() {
+        angleBeta.value = 180 - angleAlpha.value - angleGamma.value
+
+        angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
+
+        angleGammaRadians = angleGamma.value * (Math.PI / 180)
+
+        sinA = Math.sin(angleAlphaRadians)
+        sinC = Math.sin(angleGammaRadians)
+
+        coteC.value = sinC / sinA * coteA.value
+
+        angleBetaRadians = angleBeta.value * (Math.PI / 180)
+        sinB = Math.sin(angleBetaRadians)
+
+        coteB.value = sinB / sinA * coteA.value
+
+        demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
+
+        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+
+        hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
+        hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
+        hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+
+}
+
+function AAL_Beta_Alpha_B() {
+        angleGamma.value = 180 - angleAlpha.value - angleBeta.value
+
+        angleBetaRadians = angleBeta.value * (Math.PI / 180)
+
+        angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
+
+        sinA = Math.sin(angleAlphaRadians)
+        sinB = Math.sin(angleBetaRadians)
+
+        coteA.value = sinA / sinB * coteB.value
+
+        angleGammaRadians = angleGamma.value * (Math.PI / 180)
+        sinC = Math.sin(angleGammaRadians)
+
+        coteC.value = sinC / sinA * coteA.value
+
+        demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
+
+        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+
+        hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
+        hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
+        hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+
+}
+
+btnAAL.onclick = function () {
+    const sideAValue = parseFloat(coteA.value);
+    const sideBValue = parseFloat(coteB.value);
+    const sideCValue = parseFloat(coteC.value);
+    const angleAlphaValue = parseFloat(angleAlpha.value);
+    const angleBetaValue = parseFloat(angleBeta.value);
+    const angleGammaValue = parseFloat(angleGamma.value);
+
+    const numberOfSidesEntered = [sideAValue, sideBValue, sideCValue].filter((value) => !isNaN(value)).length;
+    const numberOfAnglesEntered = [angleAlphaValue, angleBetaValue, angleGammaValue].filter((value) => !isNaN(value)).length;
+
+    if(numberOfSidesEntered === 1 && numberOfAnglesEntered === 2) {
+        if (!isNaN(angleGammaValue) && !isNaN(angleBetaValue) && !isNaN(sideCValue)) {
+            AAL_Gamma_Beta_C()
+        } else if (!isNaN(angleAlphaValue) && !isNaN(angleGammaValue) && !isNaN(sideAValue)) {
+            AAL_Alpha_Gamma_A()
+        } else if (!isNaN(angleBetaValue) && !isNaN(angleAlphaValue) && !isNaN(sideBValue)) {
+            AAL_Beta_Alpha_B()
+        }
+    }
+}
+
+
+btnChercher.onclick = function() {
+    const sideAValue = parseFloat(coteA.value);
+    const sideBValue = parseFloat(coteB.value);
+    const sideCValue = parseFloat(coteC.value);
+    const angleAlphaValue = parseFloat(angleAlpha.value);
+    const angleBetaValue = parseFloat(angleBeta.value);
+    const angleGammaValue = parseFloat(angleGamma.value);
+
+    const numberOfSidesEntered = [sideAValue, sideBValue, sideCValue].filter((value) => !isNaN(value)).length;
+    const numberOfAnglesEntered = [angleAlphaValue, angleBetaValue, angleGammaValue].filter((value) => !isNaN(value)).length;
+
+    if (numberOfSidesEntered === 2 && numberOfAnglesEntered === 1) {
+        if (!isNaN(sideAValue) && !isNaN(sideBValue) && !isNaN(angleGammaValue)) {
+            LAL_A_Gamma_B()
+        } else if (!isNaN(sideBValue) && !isNaN(sideCValue) && !isNaN(angleAlphaValue)) {
+            LAL_B_Alpha_C()
+        } else if (!isNaN(sideCValue) && !isNaN(sideAValue) && !isNaN(angleBetaValue)) {
+            LAL_C_Beta_A()
+        }
+    }
+
+    if (numberOfSidesEntered === 1 && numberOfAnglesEntered === 2) {
+        if (!isNaN(angleAlphaValue) && !isNaN(angleBetaValue) && !isNaN(sideCValue)) {
+            ALA_Beta_C_Alpha()
+        } else if (!isNaN(angleAlphaValue) && !isNaN(angleGammaValue) && !isNaN(sideBValue)) {
+            ALA_Alpha_B_Gamma()
+        } else if (!isNaN(angleGammaValue) && !isNaN(sideAValue) && !isNaN(angleBetaValue)) {
+            ALA_Gamma_A_Beta()
+        } 
+    }
+
+    if (numberOfSidesEntered === 2 && numberOfAnglesEntered === 1) {
+        if (!isNaN(sideBValue) && !isNaN(sideCValue) && !isNaN(angleBetaValue)) {
+            LLA_B_C_Beta()
+        } else if (!isNaN(sideAValue) && !isNaN(sideBValue) && !isNaN(angleAlphaValue)) {
+            LLA_A_B_Alpha()
+        } else if (!isNaN(sideCValue) && !isNaN(sideAValue) && !isNaN(angleGammaValue)) {
+            LLA_C_A_Gamma()
+        }
+    }
+
+    if(numberOfSidesEntered === 1 && numberOfAnglesEntered === 2) {
+        if (!isNaN(angleGammaValue) && !isNaN(angleBetaValue) && !isNaN(sideCValue)) {
+            AAL_Gamma_Beta_C()
+        } else if (!isNaN(angleAlphaValue) && !isNaN(angleGammaValue) && !isNaN(sideAValue)) {
+            AAL_Alpha_Gamma_A()
+        } else if (!isNaN(angleBetaValue) && !isNaN(angleAlphaValue) && !isNaN(sideBValue)) {
+            AAL_Beta_Alpha_B()
         }
     }
 }
