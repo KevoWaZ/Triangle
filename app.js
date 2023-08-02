@@ -524,6 +524,33 @@ function AAL_Gamma_Beta_C() {
 
 }
 
+function AAL_Gamma_Beta_B() {
+        angleAlpha.value = 180 - angleGamma.value - angleBeta.value
+
+        angleGammaRadians = angleGamma.value * (Math.PI / 180)
+
+        angleBetaRadians = angleBeta.value * (Math.PI / 180)
+
+        angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
+
+        sinC = Math.sin(angleGammaRadians)
+        sinB = Math.sin(angleBetaRadians)
+        sinA = Math.sin(angleAlphaRadians)
+
+        coteA.value = sinA / sinB * coteB.value
+
+        coteC.value = sinC / sinA * coteA.value
+
+        demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
+
+        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+
+        hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
+        hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
+        hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+
+}
+
 function AAL_Alpha_Gamma_A() {
         angleBeta.value = 180 - angleAlpha.value - angleGamma.value
 
@@ -540,6 +567,33 @@ function AAL_Alpha_Gamma_A() {
         sinB = Math.sin(angleBetaRadians)
 
         coteB.value = sinB / sinA * coteA.value
+
+        demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
+
+        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+
+        hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
+        hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
+        hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+
+}
+
+function AAL_Alpha_Gamma_C() {
+        angleBeta.value = 180 - angleAlpha.value - angleGamma.value
+
+        angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
+
+        angleGammaRadians = angleGamma.value * (Math.PI / 180)
+
+        angleBetaRadians = angleBeta.value * (Math.PI / 180)
+
+        sinA = Math.sin(angleAlphaRadians)
+        sinB = Math.sin(angleBetaRadians)
+        sinC = Math.sin(angleGammaRadians)
+
+        coteB.value = sinB / sinC * coteC.value
+
+        coteA.value = sinA / sinC * coteC.value
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -578,6 +632,33 @@ function AAL_Beta_Alpha_B() {
 
 }
 
+function AAL_Beta_Alpha_A() {
+        angleGamma.value = 180 - angleAlpha.value - angleBeta.value
+
+        angleBetaRadians = angleBeta.value * (Math.PI / 180)
+
+        angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
+
+        angleGammaRadians = angleGamma.value * (Math.PI / 180)
+
+        sinA = Math.sin(angleAlphaRadians)
+        sinB = Math.sin(angleBetaRadians)
+        sinC = Math.sin(angleGammaRadians)
+
+        coteC.value = sinC / sinA * coteA.value
+
+        coteB.value = sinB / sinC * coteC.value
+
+        demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
+
+        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+
+        hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
+        hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
+        hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+
+}
+
 btnAAL.onclick = function () {
     const sideAValue = parseFloat(coteA.value);
     const sideBValue = parseFloat(coteB.value);
@@ -592,10 +673,16 @@ btnAAL.onclick = function () {
     if(numberOfSidesEntered === 1 && numberOfAnglesEntered === 2) {
         if (!isNaN(angleGammaValue) && !isNaN(angleBetaValue) && !isNaN(sideCValue)) {
             AAL_Gamma_Beta_C()
+        } else if (!isNaN(angleGammaValue) && !isNaN(angleBetaValue) && !isNaN(sideBValue)) {
+            AAL_Gamma_Beta_B()
         } else if (!isNaN(angleAlphaValue) && !isNaN(angleGammaValue) && !isNaN(sideAValue)) {
             AAL_Alpha_Gamma_A()
+        } else if (!isNaN(angleAlphaValue) && !isNaN(angleGammaValue) && !isNaN(sideCValue)) {
+            AAL_Alpha_Gamma_C()
         } else if (!isNaN(angleBetaValue) && !isNaN(angleAlphaValue) && !isNaN(sideBValue)) {
             AAL_Beta_Alpha_B()
+        } else if (!isNaN(angleBetaValue) && !isNaN(angleAlphaValue) && !isNaN(sideAValue)) {
+            AAL_Beta_Alpha_A()
         }
     }
 }
@@ -651,10 +738,16 @@ btnChercher.onclick = function() {
     if(numberOfSidesEntered === 1 && numberOfAnglesEntered === 2) {
         if (!isNaN(angleGammaValue) && !isNaN(angleBetaValue) && !isNaN(sideCValue)) {
             AAL_Gamma_Beta_C()
+        } else if (!isNaN(angleGammaValue) && !isNaN(angleBetaValue) && !isNaN(sideBValue)) {
+            AAL_Gamma_Beta_B()
         } else if (!isNaN(angleAlphaValue) && !isNaN(angleGammaValue) && !isNaN(sideAValue)) {
             AAL_Alpha_Gamma_A()
+        } else if (!isNaN(angleAlphaValue) && !isNaN(angleGammaValue) && !isNaN(sideCValue)) {
+            AAL_Alpha_Gamma_C()
         } else if (!isNaN(angleBetaValue) && !isNaN(angleAlphaValue) && !isNaN(sideBValue)) {
             AAL_Beta_Alpha_B()
+        } else if (!isNaN(angleBetaValue) && !isNaN(angleAlphaValue) && !isNaN(sideAValue)) {
+            AAL_Beta_Alpha_A()
         }
     }
 }
