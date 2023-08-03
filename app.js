@@ -678,12 +678,7 @@ btnAAL.onclick = function () {
     const numberOfAnglesEntered = [angleAlphaValue, angleBetaValue, angleGammaValue].filter((value) => !isNaN(value)).length;
 
 
-    if(numberOfSidesEntered === 3 && numberOfAnglesEntered === 0) {
-        if (!isNaN() && !isNaN() && !isNaN()) {
-            LLL()
-            LLLEquation()
-        }
-    }
+
 
 
     if(numberOfSidesEntered === 1 && numberOfAnglesEntered === 2) {
@@ -714,6 +709,15 @@ btnChercher.onclick = function() {
 
     const numberOfSidesEntered = [sideAValue, sideBValue, sideCValue].filter((value) => !isNaN(value)).length;
     const numberOfAnglesEntered = [angleAlphaValue, angleBetaValue, angleGammaValue].filter((value) => !isNaN(value)).length;
+
+
+    if(numberOfSidesEntered === 3 && numberOfAnglesEntered === 0) {
+        if (!isNaN(sideAValue) && !isNaN(sideBValue) && !isNaN(sideCValue)) {
+            LLL()
+            LLLEquation()
+        }
+    }
+
 
     if (numberOfSidesEntered === 2 && numberOfAnglesEntered === 1) {
         if (!isNaN(sideAValue) && !isNaN(sideBValue) && !isNaN(angleGammaValue)) {
