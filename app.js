@@ -89,10 +89,8 @@ btnAngles.onclick = function () {
     } else if (!isNaN(betaValue) && !isNaN(gammaValue)) {
 
         angleAlphaFromGammaBeta();
-    } else {
-        // Afficher un message d'erreur si deux valeurs ne sont pas remplies
-        alert("Veuillez entrer deux valeurs parmis les angles avant de cliquer sur le bouton.");
-    }
+        angleAlphaFromGammaBetaEquation()
+    } 
 }
 
 
