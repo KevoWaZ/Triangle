@@ -82,13 +82,15 @@ btnAngles.onclick = function () {
     // Vérifier si deux valeurs sont remplies
     if (!isNaN(alphaValue) && !isNaN(betaValue)) {
 
-        angleGammaFromBetaAlpha();
+        angleGammaFromBetaAlpha()
+        angleGammaFromBetaAlphaEquation()
     } else if (!isNaN(alphaValue) && !isNaN(gammaValue)) {
 
-        angleBetaFromAlphaGamma();
+        angleBetaFromAlphaGamma()
+        angleBetaFromAlphaGammaEquation()
     } else if (!isNaN(betaValue) && !isNaN(gammaValue)) {
 
-        angleAlphaFromGammaBeta();
+        angleAlphaFromGammaBeta()
         angleAlphaFromGammaBetaEquation()
     } 
 }
