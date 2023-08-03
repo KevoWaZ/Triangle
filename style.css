@@ -23,6 +23,17 @@ body {
     overflow: inherit;
 }
 
+@media screen and (max-width: 882px) {
+    .equation {
+        font-size: 7px;
+    }
+}
+@media screen and (max-width: 412px) {
+    .equation {
+        font-size: 6px;
+    }
+}
+
 input {
     display: inline-block;
 }
