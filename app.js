@@ -60,17 +60,17 @@ btn3C.onclick = function () {
 
 function angleBetaFromAlphaGamma() {
 
-        angleBeta.value = 180 - angleAlpha.value - angleGamma.value
+        angleBeta.value = (180 - angleAlpha.value - angleGamma.value).toFixed(3)
 }
 
 function angleAlphaFromGammaBeta() {
 
-        angleAlpha.value = 180 - angleBeta.value - angleGamma.value
+        angleAlpha.value = (180 - angleBeta.value - angleGamma.value).toFixed(3)
 }
 
 function angleGammaFromBetaAlpha() {
 
-        angleGamma.value = 180 - angleAlpha.value - angleBeta.value
+        angleGamma.value = (180 - angleAlpha.value - angleBeta.value).toFixed(3)
 }
 
 
@@ -115,12 +115,11 @@ function LAL_A_Gamma_B() {
         let angleBetaDegrees = (angleBetaRadians * 180) / Math.PI;
         angleBeta.value = angleBetaDegrees.toFixed(3);
 
-        hauteurA.value = coteB.value * Math.sin(angleGammaRadiansSAS).toFixed(3);
-        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(3);
-        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(3);
+        hauteurA.value = coteB.value * Math.sin(angleGammaRadiansSAS).toFixed(4);
+        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(4);
+        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(4);
 
         aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
-
 }
 
 
@@ -133,7 +132,6 @@ function LAL_B_Alpha_C() {
         let cosAlpha = (coteB.value ** 2 + coteC.value ** 2 - coteA.value ** 2) / (2 * coteB.value * coteC.value)
         let angleAlphaRadians = Math.acos(cosAlpha)
         let angleAlphaDegrees = (angleAlphaRadians * 180) / Math.PI
-        angleAlpha.value = angleAlphaDegrees.toFixed(3)
 
         let cosBeta = (coteC.value ** 2 + coteA.value ** 2 - coteB.value ** 2) / (2 * coteC.value * coteA.value);
         let angleBetaRadians = Math.acos(cosBeta);
@@ -145,9 +143,9 @@ function LAL_B_Alpha_C() {
         let angleGammaDegrees = (angleGammaRadians * 180) / Math.PI;
         angleGamma.value = angleGammaDegrees.toFixed(3);
 
-        hauteurA.value = coteB.value * Math.sin(angleGammaDegrees * Math.PI / 180).toFixed(3);
-        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(3);
-        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(3);
+        hauteurA.value = coteB.value * Math.sin(angleGammaDegrees * Math.PI / 180).toFixed(4);
+        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(4);
+        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(4);
 
         aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
 }
@@ -167,16 +165,15 @@ function LAL_C_Beta_A() {
         let cosBeta = (coteC.value ** 2 + coteA.value ** 2 - coteB.value ** 2) / (2 * coteC.value * coteA.value);
         let angleBetaRadians = Math.acos(cosBeta);
         let angleBetaDegrees = (angleBetaRadians * 180) / Math.PI;
-        angleBeta.value = angleBetaDegrees.toFixed(3);
 
         let cosGamma = (coteA.value ** 2 + coteB.value ** 2 - coteC.value ** 2) / (2 * coteA.value * coteB.value);
         let angleGammaRadians = Math.acos(cosGamma);
         let angleGammaDegrees = (angleGammaRadians * 180) / Math.PI;
         angleGamma.value = angleGammaDegrees.toFixed(3);
 
-        hauteurA.value = coteB.value * Math.sin(angleGammaDegrees * Math.PI / 180).toFixed(3);
-        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(3);
-        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(3);
+        hauteurA.value = coteB.value * Math.sin(angleGammaDegrees * Math.PI / 180).toFixed(4);
+        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(4);
+        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(4);
 
         aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
 }
@@ -250,7 +247,7 @@ function ALA_Gamma_A_Beta() {
         
         angleAlpha.value = 180 - angleBeta.value - angleGamma.value
 
-        coteC.value = (coteA.value * Math.sin(angleGamma.value * Math.PI / 180)) / Math.sin(angleAlpha.value * Math.PI / 180);
+        coteC.value = ((coteA.value * Math.sin(angleGamma.value * Math.PI / 180)) / Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
 
         let coteBvalue = (coteC.value * Math.sin((angleBeta.value * Math.PI) / 180)) / Math.sin((angleGamma.value * Math.PI) / 180)
         coteB.value = coteBvalue.toFixed(3)
@@ -263,7 +260,7 @@ function ALA_Gamma_A_Beta() {
         aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
 }
 
-btnALA.onclick = function ALA_Search() {
+btnALA.onclick = function () {
         const sideAValue = parseFloat(coteA.value);
         const sideBValue = parseFloat(coteB.value);
         const sideCValue = parseFloat(coteC.value);
@@ -314,18 +311,18 @@ function LLA_B_C_Beta() {
         sinC = sinB / coteB.value * coteC.value
         angleGammaRadians = Math.asin(sinC)
         angleGammaDegrees = angleGammaRadians * (180 / Math.PI)
-        angleGamma.value = angleGammaDegrees
+        angleGamma.value = angleGammaDegrees.toFixed(3)
 
-        angleAlpha.value = 180 - angleGamma.value - angleBeta.value
+        angleAlpha.value = (180 - angleGamma.value - angleBeta.value).toFixed(3)
         angleAlphaDegrees = angleAlpha.value / (180 / Math.PI)
 
         sinA = Math.sin(angleAlphaDegrees)
 
-        coteA.value = sinA / sinB * coteB.value
+        coteA.value = (sinA / sinB * coteB.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3) 
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -341,18 +338,18 @@ function LLA_B_C_Gamma() {
         sinB = sinC / coteC.value * coteB.value
         angleBetaRadians = Math.asin(sinB)
         angleBetaDegrees = angleBetaRadians * (180 / Math.PI)
-        angleBeta.value = angleBetaDegrees
+        angleBeta.value = angleBetaDegrees.toFixed(3)
 
-        angleAlpha.value = 180 - angleGamma.value - angleBeta.value
+        angleAlpha.value = (180 - angleGamma.value - angleBeta.value).toFixed(3)
         angleAlphaDegrees = angleAlpha.value / (180 / Math.PI)
 
         sinA = Math.sin(angleAlphaDegrees)
 
-        coteA.value = sinA / sinC * coteC.value
+        coteA.value = (sinA / sinC * coteC.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteA.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -368,18 +365,18 @@ function LLA_A_B_Alpha() {
         sinB = sinA / coteA.value * coteB.value
         angleBetaRadians = Math.asin(sinB)
         angleBetaDegrees = angleBetaRadians * (180 / Math.PI)
-        angleBeta.value = angleBetaDegrees
+        angleBeta.value = angleBetaDegrees.toFixed(3)
 
-        angleGamma.value = 180 - angleBeta.value - angleAlpha.value
+        angleGamma.value = (180 - angleBeta.value - angleAlpha.value).toFixed(3)
         angleGammaDegrees = angleGamma.value / (180 / Math.PI)
 
         sinC = Math.sin(angleGammaDegrees)
 
-        coteC.value = sinC / sinA * coteA.value
+        coteC.value = (sinC / sinA * coteA.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -395,18 +392,18 @@ function LLA_A_B_Beta() {
         sinA = sinB / coteB.value * coteA.value
         angleAlphaRadians = Math.asin(sinA)
         angleAlphaDegrees = angleAlphaRadians * (180 / Math.PI)
-        angleAlpha.value = angleAlphaDegrees
+        angleAlpha.value = angleAlphaDegrees.toFixed(3)
 
-        angleGamma.value = 180 - angleBeta.value - angleAlpha.value
+        angleGamma.value = (180 - angleBeta.value - angleAlpha.value).toFixed(3)
         angleGammaDegrees = angleGamma.value / (180 / Math.PI)
 
         sinC = Math.sin(angleGammaDegrees)
 
-        coteC.value = sinC / sinB * coteB.value
+        coteC.value = (sinC / sinB * coteB.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -422,18 +419,18 @@ function LLA_C_A_Gamma() {
         sinA = sinC / coteC.value * coteA.value
         angleAlphaRadians = Math.asin(sinA)
         angleAlphaDegrees = angleAlphaRadians * (180 / Math.PI)
-        angleAlpha.value = angleAlphaDegrees
+        angleAlpha.value = angleAlphaDegrees.toFixed(3)
 
-        angleBeta.value = 180 - angleGamma.value - angleAlpha.value
+        angleBeta.value = (180 - angleGamma.value - angleAlpha.value).toFixed(3)
         angleBetaDegrees = angleBeta.value / (180 / Math.PI)
 
         sinB = Math.sin(angleBetaDegrees)
 
-        coteB.value = sinB / sinC * coteC.value
+        coteB.value = (sinB / sinC * coteC.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteA.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -449,18 +446,18 @@ function LLA_C_A_Alpha() {
         sinC = sinA / coteA.value * coteC.value
         angleGammaRadians = Math.asin(sinC)
         angleGammaDegrees = angleGammaRadians * (180 / Math.PI)
-        angleGamma.value = angleGammaDegrees
+        angleGamma.value = angleGammaDegrees.toFixed(3)
 
-        angleBeta.value = 180 - angleGamma.value - angleAlpha.value
+        angleBeta.value = (180 - angleGamma.value - angleAlpha.value).toFixed(3)
         angleBetaDegrees = angleBeta.value / (180 / Math.PI)
 
         sinB = Math.sin(angleBetaDegrees)
 
-        coteB.value = sinB / sinC * coteC.value
+        coteB.value = (sinB / sinC * coteC.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteA.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -498,7 +495,7 @@ btnLLA.onclick = function () {
 
 
 function AAL_Gamma_Beta_C() {
-        angleAlpha.value = 180 - angleGamma.value - angleBeta.value
+        angleAlpha.value = (180 - angleGamma.value - angleBeta.value).toFixed(3)
 
         angleGammaRadians = angleGamma.value * (Math.PI / 180)
 
@@ -507,16 +504,16 @@ function AAL_Gamma_Beta_C() {
         sinC = Math.sin(angleGammaRadians)
         sinB = Math.sin(angleBetaRadians)
 
-        coteB.value = sinB / sinC * coteC.value
+        coteB.value = (sinB / sinC * coteC.value).toFixed(3)
 
         angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
         sinA = Math.sin(angleAlphaRadians)
 
-        coteA.value = sinA / sinC * coteC.value
+        coteA.value = (sinA / sinC * coteC.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3) 
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -525,7 +522,7 @@ function AAL_Gamma_Beta_C() {
 }
 
 function AAL_Gamma_Beta_B() {
-        angleAlpha.value = 180 - angleGamma.value - angleBeta.value
+        angleAlpha.value = (180 - angleGamma.value - angleBeta.value).toFixed(3)
 
         angleGammaRadians = angleGamma.value * (Math.PI / 180)
 
@@ -537,13 +534,13 @@ function AAL_Gamma_Beta_B() {
         sinB = Math.sin(angleBetaRadians)
         sinA = Math.sin(angleAlphaRadians)
 
-        coteA.value = sinA / sinB * coteB.value
+        coteA.value = (sinA / sinB * coteB.value).toFixed(3)
 
-        coteC.value = sinC / sinA * coteA.value
+        coteC.value = (sinC / sinA * coteA.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -552,7 +549,7 @@ function AAL_Gamma_Beta_B() {
 }
 
 function AAL_Alpha_Gamma_A() {
-        angleBeta.value = 180 - angleAlpha.value - angleGamma.value
+        angleBeta.value = (180 - angleAlpha.value - angleGamma.value).toFixed(3)
 
         angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
 
@@ -561,16 +558,16 @@ function AAL_Alpha_Gamma_A() {
         sinA = Math.sin(angleAlphaRadians)
         sinC = Math.sin(angleGammaRadians)
 
-        coteC.value = sinC / sinA * coteA.value
+        coteC.value = (sinC / sinA * coteA.value).toFixed(3)
 
         angleBetaRadians = angleBeta.value * (Math.PI / 180)
         sinB = Math.sin(angleBetaRadians)
 
-        coteB.value = sinB / sinA * coteA.value
+        coteB.value = (sinB / sinA * coteA.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -579,7 +576,7 @@ function AAL_Alpha_Gamma_A() {
 }
 
 function AAL_Alpha_Gamma_C() {
-        angleBeta.value = 180 - angleAlpha.value - angleGamma.value
+        angleBeta.value = (180 - angleAlpha.value - angleGamma.value).toFixed(3)
 
         angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
 
@@ -591,13 +588,13 @@ function AAL_Alpha_Gamma_C() {
         sinB = Math.sin(angleBetaRadians)
         sinC = Math.sin(angleGammaRadians)
 
-        coteB.value = sinB / sinC * coteC.value
+        coteB.value = (sinB / sinC * coteC.value).toFixed(3)
 
-        coteA.value = sinA / sinC * coteC.value
+        coteA.value = (sinA / sinC * coteC.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -606,7 +603,7 @@ function AAL_Alpha_Gamma_C() {
 }
 
 function AAL_Beta_Alpha_B() {
-        angleGamma.value = 180 - angleAlpha.value - angleBeta.value
+        angleGamma.value = (180 - angleAlpha.value - angleBeta.value).toFixed(3)
 
         angleBetaRadians = angleBeta.value * (Math.PI / 180)
 
@@ -615,16 +612,16 @@ function AAL_Beta_Alpha_B() {
         sinA = Math.sin(angleAlphaRadians)
         sinB = Math.sin(angleBetaRadians)
 
-        coteA.value = sinA / sinB * coteB.value
+        coteA.value = (sinA / sinB * coteB.value).toFixed(3)
 
         angleGammaRadians = angleGamma.value * (Math.PI / 180)
         sinC = Math.sin(angleGammaRadians)
 
-        coteC.value = sinC / sinA * coteA.value
+        coteC.value = (sinC / sinA * coteA.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
@@ -633,7 +630,7 @@ function AAL_Beta_Alpha_B() {
 }
 
 function AAL_Beta_Alpha_A() {
-        angleGamma.value = 180 - angleAlpha.value - angleBeta.value
+        angleGamma.value = (180 - angleAlpha.value - angleBeta.value).toFixed(3)
 
         angleBetaRadians = angleBeta.value * (Math.PI / 180)
 
@@ -645,13 +642,13 @@ function AAL_Beta_Alpha_A() {
         sinB = Math.sin(angleBetaRadians)
         sinC = Math.sin(angleGammaRadians)
 
-        coteC.value = sinC / sinA * coteA.value
+        coteC.value = (sinC / sinA * coteA.value).toFixed(3)
 
-        coteB.value = sinB / sinC * coteC.value
+        coteB.value = (sinB / sinC * coteC.value).toFixed(3)
 
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
-        aire.value = Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value)) 
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
         hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
