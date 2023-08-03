@@ -20,38 +20,47 @@ let btnReset = document.getElementById("reset")
 
 // TROUVER TOUTES LES VALEURS D'UN TRIANGLE A PARTIR DES COTES CAS SSS
 
-function cote3() {
-        // Calculer le cosinus de l'angle Alpha (A) en utilisant la loi des cosinus
-        let cosAlpha = (coteB.value ** 2 + coteC.value ** 2 - coteA.value ** 2) / (2 * coteB.value * coteC.value)
-
-        // Calculer l'angle Alpha (A) en radians en utilisant la fonction Math.acos()
-        let angleAlphaRadians = Math.acos(cosAlpha)
-
-        // Convertir l'angle de radians à degrés en utilisant la fonction Math.degrees()
-        let angleAlphaDegrees = (angleAlphaRadians * 180) / Math.PI
-
-        // Mettre à jour la valeur de l'angleAlpha dans l'élément HTML correspondant
+function LLL() {
+        cosA = ((-Math.pow(coteA.value, 2)) + coteB.value ** 2 + coteC.value ** 2) / (2 * coteB.value * coteC.value)
+        angleAlphaRadians = Math.acos(cosA)
+        angleAlphaDegrees = (angleAlphaRadians * 180) / Math.PI
         angleAlpha.value = angleAlphaDegrees.toFixed(3)
 
-        let cosBeta = (coteC.value ** 2 + coteA.value ** 2 - coteB.value ** 2) / (2 * coteC.value * coteA.value);
-        let angleBetaRadians = Math.acos(cosBeta);
-        let angleBetaDegrees = (angleBetaRadians * 180) / Math.PI;
-        angleBeta.value = angleBetaDegrees.toFixed(3);
+        cosB = (coteA.value ** 2 - coteB.value ** 2 + coteC.value ** 2) / (2 * coteC.value * coteA.value)
+        angleBetaRadians = Math.acos(cosB)
+        angleBetaDegrees = (angleBetaRadians * 180) / Math.PI
+        angleBeta.value = angleBetaDegrees.toFixed(3)
 
-        let cosGamma = (coteA.value ** 2 + coteB.value ** 2 - coteC.value ** 2) / (2 * coteA.value * coteB.value);
-        let angleGammaRadians = Math.acos(cosGamma);
-        let angleGammaDegrees = (angleGammaRadians * 180) / Math.PI;
-        angleGamma.value = angleGammaDegrees.toFixed(3);
+        cosC = (coteA.value ** 2 + coteB.value ** 2 - coteC.value ** 2) / (2 * coteA.value * coteB.value);
+        angleGamma.value = (180 - angleAlpha.value - angleBeta.value).toFixed(3)
+        angleGammaRadians = Math.acos(cosC)
+        angleGammaDegrees = (angleGammaRadians * 180) / Math.PI;
+
+        // Formule de Héron pour trouver l'aire
+        demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
+
+        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
         hauteurA.value = coteB.value * Math.sin(angleGammaDegrees * Math.PI / 180).toFixed(3); // Convertir l'angle Gamma en radians avant de calculer le sin
         hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(3);  // ERREUR JE DOIS MODIFIER
         hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(3);
 
-        aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
+        cosAMath = cosA.toFixed(3)
+        cosBMath = cosB.toFixed(3)
+        acar = coteA.value ** 2
+        bcar = coteB.value ** 2
+        ccar = coteC.value ** 2
+        aValueE = coteA.value
+        bValueE = coteB.value
+        cValueE = coteC.value
+        angleADG = angleAlphaDegrees.toFixed(3)
+        angleBDG = angleBetaDegrees.toFixed(3)
+        demiPEq = demiP.toFixed(3)
 }
 
 btn3C.onclick = function () {
-    cote3()
+    LLL()
+    LLLEquation()
 }
 
 
@@ -646,6 +655,7 @@ function AAL_Beta_Alpha_A() {
 
         coteB.value = (sinB / sinC * coteC.value).toFixed(3)
 
+        // Formule de Héron pour trouver l'aire
         demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
         aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
@@ -666,6 +676,15 @@ btnAAL.onclick = function () {
 
     const numberOfSidesEntered = [sideAValue, sideBValue, sideCValue].filter((value) => !isNaN(value)).length;
     const numberOfAnglesEntered = [angleAlphaValue, angleBetaValue, angleGammaValue].filter((value) => !isNaN(value)).length;
+
+
+    if(numberOfSidesEntered === 3 && numberOfAnglesEntered === 0) {
+        if (!isNaN() && !isNaN() && !isNaN()) {
+            LLL()
+            LLLEquation()
+        }
+    }
+
 
     if(numberOfSidesEntered === 1 && numberOfAnglesEntered === 2) {
         if (!isNaN(angleGammaValue) && !isNaN(angleBetaValue) && !isNaN(sideCValue)) {
