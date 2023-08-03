@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="C'est ici que j'apprends le dev Front-End">
     <title>Calculateur triangle</title>
     <link rel="stylesheet" href="style.css">
@@ -64,21 +64,23 @@
         </div>
         <div class="rayon">
             <h1>Aire: </h1>
-            <input type="number" id="aire" placeholder="Entre un nombre">
-            <button id="calcul2Angles">Calculer 2 angles</button>
-            <button id="calcul3C">Calculer 3 côtés LLL</button>
-            <button id="calculLAL">Calculer LAL</button>
-            <button id="calculALA">Calculer ALA</button>
-            <button id="calculLLA">Calculer LLA</button>
-            <button id="calculAAL">Calculer AAL</button>
-            <button id="chercher">chercher</button>
         </div>
-        <button id="reset">Reset</button>
-        <button onclick="changeEquation()">change</button>
+    </div>
 
-        <div class="equation">
+        <input type="number" id="aire" placeholder="Entre un nombre">
+        <button id="calcul2Angles">Calculer 2 angles</button>
+        <button id="calcul3C">Calculer 3 côtés LLL</button>
+        <button id="calculLAL">Calculer LAL</button>
+        <button id="calculALA">Calculer ALA</button>
+        <button id="calculLLA">Calculer LLA</button>
+        <button id="calculAAL">Calculer AAL</button>
+        <button id="chercher">chercher</button>
+    </div>
+    <button id="reset">Reset</button>
+    <button onclick="changeEquation()">change</button>
 
-        </div>
+    <div class="equation">
+
     </div>
 
     <script defer src="app.js"></script>
