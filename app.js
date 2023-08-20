@@ -18,70 +18,10 @@ let btnChercher = document.getElementById("chercher")
 let btnReset = document.getElementById("reset")
 
 
-// TROUVER TOUTES LES VALEURS D'UN TRIANGLE A PARTIR DES COTES CAS SSS
-
-function LLL() {
-        cosA = ((-Math.pow(coteA.value, 2)) + coteB.value ** 2 + coteC.value ** 2) / (2 * coteB.value * coteC.value)
-        angleAlphaRadians = Math.acos(cosA)
-        angleAlphaDegrees = (angleAlphaRadians * 180) / Math.PI
-        angleAlpha.value = angleAlphaDegrees.toFixed(3)
-
-        cosB = (coteA.value ** 2 - coteB.value ** 2 + coteC.value ** 2) / (2 * coteC.value * coteA.value)
-        angleBetaRadians = Math.acos(cosB)
-        angleBetaDegrees = (angleBetaRadians * 180) / Math.PI
-        angleBeta.value = angleBetaDegrees.toFixed(3)
-
-        cosC = (coteA.value ** 2 + coteB.value ** 2 - coteC.value ** 2) / (2 * coteA.value * coteB.value);
-        angleGamma.value = (180 - angleAlpha.value - angleBeta.value).toFixed(3)
-        angleGammaRadians = Math.acos(cosC)
-        angleGammaDegrees = (angleGammaRadians * 180) / Math.PI;
-
-        // Formule de Héron pour trouver l'aire
-        demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
-
-        aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
-
-        hauteurA.value = coteB.value * Math.sin(angleGammaDegrees * Math.PI / 180).toFixed(3); // Convertir l'angle Gamma en radians avant de calculer le sin
-        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(3);  // ERREUR JE DOIS MODIFIER
-        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(3);
-
-        cosAMath = cosA.toFixed(3)
-        cosBMath = cosB.toFixed(3)
-        acar = coteA.value ** 2
-        bcar = coteB.value ** 2
-        ccar = coteC.value ** 2
-        aValueE = coteA.value
-        bValueE = coteB.value
-        cValueE = coteC.value
-        angleADG = angleAlphaDegrees.toFixed(3)
-        angleBDG = angleBetaDegrees.toFixed(3)
-        demiPEq = demiP.toFixed(3)
-}
-
 btn3C.onclick = function () {
     LLL()
     LLLEquation()
 }
-
-
-
-// // // TROUVER LA VALEUR D'UN ANGLE A PARTIR DE DEUX ANGLES
-
-function angleBetaFromAlphaGamma() {
-
-        angleBeta.value = (180 - angleAlpha.value - angleGamma.value).toFixed(3)
-}
-
-function angleAlphaFromGammaBeta() {
-
-        angleAlpha.value = (180 - angleBeta.value - angleGamma.value).toFixed(3)
-}
-
-function angleGammaFromBetaAlpha() {
-
-        angleGamma.value = (180 - angleAlpha.value - angleBeta.value).toFixed(3)
-}
-
 
 btnAngles.onclick = function () {
     const alphaValue = parseFloat(angleAlpha.value);
@@ -104,88 +44,6 @@ btnAngles.onclick = function () {
     } 
 }
 
-
-// TROUVER A PARTIR DU COTE ANGLE COTE CAS SAS Un angle et les deux côtés adjacents
-
-
-function LAL_A_Gamma_B() {
-        let angleGammaRadiansSAS = (angleGamma.value * Math.PI) / 180
-
-        coteC.value = (Math.sqrt(coteA.value ** 2 + coteB.value ** 2 - 2 * coteA.value * coteB.value * Math.cos(angleGammaRadiansSAS))).toFixed(3)
-
-
-        let cosAlpha = (coteB.value ** 2 + coteC.value ** 2 - coteA.value ** 2) / (2 * coteB.value * coteC.value)
-        let angleAlphaRadians = Math.acos(cosAlpha)
-        let angleAlphaDegrees = (angleAlphaRadians * 180) / Math.PI
-        angleAlpha.value = angleAlphaDegrees.toFixed(3)
-
-        let cosBeta = (coteC.value ** 2 + coteA.value ** 2 - coteB.value ** 2) / (2 * coteC.value * coteA.value);
-        let angleBetaRadians = Math.acos(cosBeta);
-        let angleBetaDegrees = (angleBetaRadians * 180) / Math.PI;
-        angleBeta.value = angleBetaDegrees.toFixed(3);
-
-        hauteurA.value = coteB.value * Math.sin(angleGammaRadiansSAS).toFixed(4);
-        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(4);
-        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(4);
-
-        aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
-}
-
-
-function LAL_B_Alpha_C() {
-        let angleAlphaRadiansSAS = (angleAlpha.value * Math.PI) / 180
-
-        coteA.value = (Math.sqrt(coteB.value ** 2 + coteC.value ** 2 - 2 * coteB.value * coteC.value * Math.cos(angleAlphaRadiansSAS))).toFixed(3)
-
-
-        let cosAlpha = (coteB.value ** 2 + coteC.value ** 2 - coteA.value ** 2) / (2 * coteB.value * coteC.value)
-        let angleAlphaRadians = Math.acos(cosAlpha)
-        let angleAlphaDegrees = (angleAlphaRadians * 180) / Math.PI
-
-        let cosBeta = (coteC.value ** 2 + coteA.value ** 2 - coteB.value ** 2) / (2 * coteC.value * coteA.value);
-        let angleBetaRadians = Math.acos(cosBeta);
-        let angleBetaDegrees = (angleBetaRadians * 180) / Math.PI;
-        angleBeta.value = angleBetaDegrees.toFixed(3);
-
-        let cosGamma = (coteA.value ** 2 + coteB.value ** 2 - coteC.value ** 2) / (2 * coteA.value * coteB.value);
-        let angleGammaRadians = Math.acos(cosGamma);
-        let angleGammaDegrees = (angleGammaRadians * 180) / Math.PI;
-        angleGamma.value = angleGammaDegrees.toFixed(3);
-
-        hauteurA.value = coteB.value * Math.sin(angleGammaDegrees * Math.PI / 180).toFixed(4);
-        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(4);
-        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(4);
-
-        aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
-}
-
-
-function LAL_C_Beta_A() {
-        let angleBetaRadiansSAS = (angleBeta.value * Math.PI) / 180
-
-        coteB.value = (Math.sqrt(coteC.value ** 2 + coteA.value ** 2 - 2 * coteC.value * coteA.value * Math.cos(angleBetaRadiansSAS))).toFixed(3)
-
-
-        let cosAlpha = (coteB.value ** 2 + coteC.value ** 2 - coteA.value ** 2) / (2 * coteB.value * coteC.value)
-        let angleAlphaRadians = Math.acos(cosAlpha)
-        let angleAlphaDegrees = (angleAlphaRadians * 180) / Math.PI
-        angleAlpha.value = angleAlphaDegrees.toFixed(3)
-
-        let cosBeta = (coteC.value ** 2 + coteA.value ** 2 - coteB.value ** 2) / (2 * coteC.value * coteA.value);
-        let angleBetaRadians = Math.acos(cosBeta);
-        let angleBetaDegrees = (angleBetaRadians * 180) / Math.PI;
-
-        let cosGamma = (coteA.value ** 2 + coteB.value ** 2 - coteC.value ** 2) / (2 * coteA.value * coteB.value);
-        let angleGammaRadians = Math.acos(cosGamma);
-        let angleGammaDegrees = (angleGammaRadians * 180) / Math.PI;
-        angleGamma.value = angleGammaDegrees.toFixed(3);
-
-        hauteurA.value = coteB.value * Math.sin(angleGammaDegrees * Math.PI / 180).toFixed(4);
-        hauteurB.value = coteB.value * Math.sin(angleBetaDegrees * Math.PI / 180).toFixed(4);
-        hauteurC.value = coteB.value * Math.sin(angleAlphaDegrees * Math.PI / 180).toFixed(4);
-
-        aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
-}
 
 
 btnLAL.onclick = function LAL_Search() {
