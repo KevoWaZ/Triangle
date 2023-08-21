@@ -75,6 +75,10 @@ function LLLEquation() {
 
 function angleGammaFromBetaAlphaEquation() {
     let ajout = document.querySelector('.equation')
+    let alert = document.createElement("h2")
+    alert.id = "alert"
+    alert.innerHTML = "Cas AAA, il n'est pas possible de résoudre un triangle avec seulement 3 angles!!"
+    ajout.appendChild(alert)
     let equationP = document.createElement("h2")
     equationP.id = "equation"
     equationP.innerHTML = `\\(\\gamma =180 - \\beta - \\alpha =${angleGamma.value}° \\)`
@@ -87,6 +91,10 @@ function angleGammaFromBetaAlphaEquation() {
 }
 function angleBetaFromAlphaGammaEquation() {
     let ajout = document.querySelector('.equation')
+    let alert = document.createElement("h2")
+    alert.id = "alert"
+    alert.innerHTML = "Cas AAA, il n'est pas possible de résoudre un triangle avec seulement 3 angles!!"
+    ajout.appendChild(alert)
     let equationP = document.createElement("h2")
     equationP.id = "equation"
     equationP.innerHTML = `\\(\\beta =180 - \\alpha - \\gamma =${angleBeta.value}° \\)`
@@ -99,6 +107,10 @@ function angleBetaFromAlphaGammaEquation() {
 }
 function angleAlphaFromGammaBetaEquation() {
     let ajout = document.querySelector('.equation')
+    let alert = document.createElement("h2")
+    alert.id = "alert"
+    alert.innerHTML = "Cas AAA, il n'est pas possible de résoudre un triangle avec seulement 3 angles!!"
+    ajout.appendChild(alert)
     let equationP = document.createElement("h2")
     equationP.id = "equation"
     equationP.innerHTML = `\\(\\alpha =180 - \\beta - \\gamma =${angleAlpha.value}° \\)`
