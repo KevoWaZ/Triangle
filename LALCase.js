@@ -2,82 +2,88 @@
 
 
 function LAL_A_Gamma_B() {
+    // Convertit l'angle en radians
     angleGammaRadians = (angleGamma.value * Math.PI) / 180
+
+    // Utilise la loi des cosinus pour calculer la longueur du côté coteC
     coteC.value = (Math.sqrt(coteA.value ** 2 + coteB.value ** 2 - 2 * coteA.value * coteB.value * Math.cos(angleGammaRadians))).toFixed(3)
     cosGamma = Math.cos(angleGammaRadians)
 
-    sinA = (coteA.value * Math.sin(angleGammaRadians)) / coteC.value
-    angleAlphaRadians = Math.asin(sinA)
-    angleAlphaDegrees = (angleAlphaRadians * 180) / Math.PI
-    angleAlpha.value = angleAlphaDegrees.toFixed(3)
+    cosBeta = (coteA.value ** 2 + coteC.value ** 2 - coteB.value ** 2) / (2 * coteA.value * coteC.value)
+    angleBetaRadians = Math.acos(cosBeta)
+    angleBetaDegrees = angleBetaRadians * 180 / Math.PI
+    angleBeta.value = angleBetaDegrees.toFixed(3)
 
-    angleBeta.value = (180 - angleAlpha.value - angleGamma.value).toFixed(3)
+    angleAlpha.value = (180 - angleBeta.value - angleGamma.value).toFixed(3)
 
-
-    // Formule de Héron pour trouver l'aire
+    // Calcule le demi-périmètre pour l'aire du triangle
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
+    // Calcule l'aire du triangle en utilisant la formule de Héron
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
-    ///////////
 
-    // Calcul de la hauteur 
+    // Calcule les hauteurs relatives aux côtés du triangle en utilisant l'aire et les longueurs des côtés
     hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
     hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
     hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
-    ///////////
 }
 
 
 function LAL_B_Alpha_C() {
-
-    // Calcul côté 
+    // Convertit l'angle en radians
     angleAlphaRadians = (angleAlpha.value * Math.PI) / 180
+
+    // Utilise la loi des cosinus pour calculer la longueur du côté coteA
     coteA.value = (Math.sqrt(coteB.value ** 2 + coteC.value ** 2 - 2 * coteB.value * coteC.value * Math.cos(angleAlphaRadians))).toFixed(3)
     cosAlpha = Math.cos(angleAlphaRadians)
 
-    sinBeta = (cosAlpha / coteA.value) * coteB.value
-    angleBetaRadians = Math.asin(sinBeta)
-    angleBetaDegrees = (angleBetaRadians * 180) / Math.PI
+    cosBeta = (coteA.value ** 2 + coteC.value ** 2 - coteB.value ** 2) / (2 * coteA.value * coteC.value)
+    angleBetaRadians = Math.acos(cosBeta)
+    angleBetaDegrees = angleBetaRadians * 180 / Math.PI
     angleBeta.value = angleBetaDegrees.toFixed(3)
 
-    angleGamma.value = 180 - angleBeta.value - angleAlpha.value
+    // Calcule l'angle Gamma en fonction des autres angles
+    angleGamma.value = (180 - angleBeta.value - angleAlpha.value).toFixed(3)
 
-
-    // Formule de Héron pour trouver l'aire
+    // Calcule le demi-périmètre pour l'aire du triangle
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
+    // Calcule l'aire du triangle en utilisant la formule de Héron
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
-    ///////////
 
-    // Calcul de la hauteur 
+    // Calcule les hauteurs relatives aux côtés du triangle en utilisant l'aire et les longueurs des côtés
     hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
     hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
     hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
-    ///////////
 }
 
 
 function LAL_C_Beta_A() {
+    // Convertit l'angle en radians
     angleBetaRadians = (angleBeta.value * Math.PI) / 180
+
+    // Utilise la loi des cosinus pour calculer la longueur du côté coteB
     coteB.value = (Math.sqrt(coteC.value ** 2 + coteA.value ** 2 - 2 * coteC.value * coteA.value * Math.cos(angleBetaRadians))).toFixed(3)
 
-    cosGamma = (coteA.value ** 2 + coteB.value ** 2 - coteC.value ** 2) / (2 * coteA.value * coteB.value);
+    // Calcule le cosinus de l'angle Gamma en utilisant la loi des cosinus
+    cosGamma = (coteA.value ** 2 + coteB.value ** 2 - coteC.value ** 2) / (2 * coteA.value * coteB.value)
     angleGammaRadians = Math.acos(cosGamma);
-    angleGammaDegrees = (angleGammaRadians * 180) / Math.PI;
-    angleGamma.value = angleGammaDegrees.toFixed(3);
+    angleGammaDegrees = (angleGammaRadians * 180) / Math.PI
 
+    // Met à jour la valeur de l'angle Gamma
+    angleGamma.value = angleGammaDegrees.toFixed(3)
+
+    // Calcule l'angle Alpha en fonction des autres angles
     angleAlpha.value = (180 - angleGamma.value - angleBeta.value).toFixed(3)
 
-
-    // Formule de Héron pour trouver l'aire
+    // Calcule le demi-périmètre pour l'aire du triangle
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
+    // Calcule l'aire du triangle en utilisant la formule de Héron
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
-    ///////////
 
-    // Calcul de la hauteur 
+    // Calcule les hauteurs relatives aux côtés du triangle en utilisant l'aire et les longueurs des côtés
     hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
     hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
     hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
-    ///////////
 }
