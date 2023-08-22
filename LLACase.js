@@ -155,7 +155,7 @@ function LLA_C_A_Alpha() {
 
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteA.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
 }

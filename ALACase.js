@@ -8,11 +8,14 @@ function ALA_Beta_C_Alpha() {
     let coteBvalue = (coteC.value * Math.sin((angleBeta.value * Math.PI) / 180)) / Math.sin((angleGamma.value * Math.PI) / 180)
     coteB.value = coteBvalue.toFixed(3)
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+    // Formule de Héron pour calculer l'aire
+    demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2;
+    aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3);
 
-    aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
+    // Calcul des hauteurs relatives aux côtés
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3);
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3);
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3);
 }
 
 function ALA_Alpha_B_Gamma() {
@@ -25,12 +28,14 @@ function ALA_Alpha_B_Gamma() {
     let coteAvalue = (coteC.value * Math.sin((angleAlpha.value * Math.PI) / 180)) / Math.sin((angleGamma.value * Math.PI) / 180)
     coteA.value = coteAvalue.toFixed(3)
 
+    // Formule de Héron pour calculer l'aire
+    demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2;
+    aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3);
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
-
-    aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
+    // Calcul des hauteurs relatives aux côtés
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3);
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3);
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3);
 }
 
 function ALA_Gamma_A_Beta() {
@@ -42,10 +47,12 @@ function ALA_Gamma_A_Beta() {
     let coteBvalue = (coteC.value * Math.sin((angleBeta.value * Math.PI) / 180)) / Math.sin((angleGamma.value * Math.PI) / 180)
     coteB.value = coteBvalue.toFixed(3)
 
+    // Formule de Héron pour calculer l'aire
+    demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2;
+    aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3);
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
-
-    aire.value = ((coteA.value * hauteurA.value) / 2).toFixed(3)
+    // Calcul des hauteurs relatives aux côtés
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3);
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3);
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3);
 }

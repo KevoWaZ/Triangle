@@ -19,9 +19,9 @@ function AAL_Gamma_Beta_C() {
 
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3) 
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
 
 }
 
@@ -46,9 +46,9 @@ function AAL_Gamma_Beta_B() {
 
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
 
 }
 
@@ -73,9 +73,9 @@ function AAL_Alpha_Gamma_A() {
 
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
 
 }
 
@@ -100,9 +100,9 @@ function AAL_Alpha_Gamma_C() {
 
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
 
 }
 
@@ -127,9 +127,9 @@ function AAL_Beta_Alpha_B() {
 
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
 
 }
 
@@ -155,8 +155,8 @@ function AAL_Beta_Alpha_A() {
 
     aire.value = (Math.sqrt(demiP * (demiP - coteA.value) * (demiP - coteB.value) * (demiP - coteC.value))).toFixed(3)
 
-    hauteurA.value = (coteB.value * Math.sin(angleGamma.value * Math.PI / 180)).toFixed(3)
-    hauteurB.value = (coteB.value * Math.sin(angleBeta.value * Math.PI / 180)).toFixed(3)
-    hauteurC.value = (coteB.value * Math.sin(angleAlpha.value * Math.PI / 180)).toFixed(3)
+    hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3)
+    hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3)
+    hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3)
 
 }
