@@ -16,6 +16,19 @@ function ALA_Beta_C_Alpha() {
     hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3);
     hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3);
     hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3);
+
+    demiPeri.value = demiP.toFixed(3)
+
+    perimetre.value = demiP * 2
+
+    medianeA.value = (1/2 * Math.sqrt(2 * coteB.value ** 2 + 2 * coteC.value ** 2 - coteA.value ** 2)).toFixed(3)
+    medianeB.value = (1/2 * Math.sqrt(2 * coteA.value ** 2 + 2 * coteC.value ** 2 - coteB.value ** 2)).toFixed(3)
+    medianeC.value = (1/2 * Math.sqrt(2 * coteA.value ** 2 + 2 * coteB.value ** 2 - coteC.value ** 2)).toFixed(3)
+
+
+    bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
+    bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
+    bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
 }
 
 function ALA_Alpha_B_Gamma() {
@@ -36,6 +49,19 @@ function ALA_Alpha_B_Gamma() {
     hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3);
     hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3);
     hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3);
+
+    demiPeri.value = demiP.toFixed(3)
+
+    perimetre.value = demiP * 2
+
+    medianeA.value = (1/2 * Math.sqrt(2 * coteB.value ** 2 + 2 * coteC.value ** 2 - coteA.value ** 2)).toFixed(3)
+    medianeB.value = (1/2 * Math.sqrt(2 * coteA.value ** 2 + 2 * coteC.value ** 2 - coteB.value ** 2)).toFixed(3)
+    medianeC.value = (1/2 * Math.sqrt(2 * coteA.value ** 2 + 2 * coteB.value ** 2 - coteC.value ** 2)).toFixed(3)
+
+
+    bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
+    bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
+    bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
 }
 
 function ALA_Gamma_A_Beta() {
@@ -55,4 +81,17 @@ function ALA_Gamma_A_Beta() {
     hauteurA.value = (aire.value * 2 / coteA.value).toFixed(3);
     hauteurB.value = (aire.value * 2 / coteB.value).toFixed(3);
     hauteurC.value = (aire.value * 2 / coteC.value).toFixed(3);
+
+    demiPeri.value = demiP.toFixed(3)
+
+    perimetre.value = demiP * 2
+
+    medianeA.value = (1/2 * Math.sqrt(2 * coteB.value ** 2 + 2 * coteC.value ** 2 - coteA.value ** 2)).toFixed(3)
+    medianeB.value = (1/2 * Math.sqrt(2 * coteA.value ** 2 + 2 * coteC.value ** 2 - coteB.value ** 2)).toFixed(3)
+    medianeC.value = (1/2 * Math.sqrt(2 * coteA.value ** 2 + 2 * coteB.value ** 2 - coteC.value ** 2)).toFixed(3)
+
+
+    bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
+    bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
+    bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
 }
