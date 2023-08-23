@@ -5,15 +5,15 @@ function AAL_Gamma_Beta_C() {
 
     angleBetaRadians = angleBeta.value * (Math.PI / 180)
 
-    sinC = Math.sin(angleGammaRadians)
-    sinB = Math.sin(angleBetaRadians)
+    sinnC = Math.sin(angleGammaRadians)
+    sinnB = Math.sin(angleBetaRadians)
 
-    coteB.value = (sinB / sinC * coteC.value).toFixed(3)
+    coteB.value = (sinnB / sinnC * coteC.value).toFixed(3)
 
     angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
-    sinA = Math.sin(angleAlphaRadians)
+    sinnA = Math.sin(angleAlphaRadians)
 
-    coteA.value = (sinA / sinC * coteC.value).toFixed(3)
+    coteA.value = (sinnA / sinnC * coteC.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -36,6 +36,18 @@ function AAL_Gamma_Beta_C() {
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
 
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = Math.sin((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    sinB.value = Math.sin((angleBeta.value * Math.PI) / 180).toFixed(3)
+    sinC.value = Math.sin((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
+
 }
 
 function AAL_Gamma_Beta_B() {
@@ -47,13 +59,13 @@ function AAL_Gamma_Beta_B() {
 
     angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
 
-    sinC = Math.sin(angleGammaRadians)
-    sinB = Math.sin(angleBetaRadians)
-    sinA = Math.sin(angleAlphaRadians)
+    sinnC = Math.sin(angleGammaRadians)
+    sinnB = Math.sin(angleBetaRadians)
+    sinnA = Math.sin(angleAlphaRadians)
 
-    coteA.value = (sinA / sinB * coteB.value).toFixed(3)
+    coteA.value = (sinnA / sinnB * coteB.value).toFixed(3)
 
-    coteC.value = (sinC / sinA * coteA.value).toFixed(3)
+    coteC.value = (sinnC / sinnA * coteA.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -75,6 +87,18 @@ function AAL_Gamma_Beta_B() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = Math.sin((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    sinB.value = Math.sin((angleBeta.value * Math.PI) / 180).toFixed(3)
+    sinC.value = Math.sin((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 
 }
 
@@ -85,15 +109,15 @@ function AAL_Alpha_Gamma_A() {
 
     angleGammaRadians = angleGamma.value * (Math.PI / 180)
 
-    sinA = Math.sin(angleAlphaRadians)
-    sinC = Math.sin(angleGammaRadians)
+    sinnA = Math.sin(angleAlphaRadians)
+    sinnC = Math.sin(angleGammaRadians)
 
-    coteC.value = (sinC / sinA * coteA.value).toFixed(3)
+    coteC.value = (sinnC / sinnA * coteA.value).toFixed(3)
 
     angleBetaRadians = angleBeta.value * (Math.PI / 180)
-    sinB = Math.sin(angleBetaRadians)
+    sinnB = Math.sin(angleBetaRadians)
 
-    coteB.value = (sinB / sinA * coteA.value).toFixed(3)
+    coteB.value = (sinnB / sinnA * coteA.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -115,6 +139,18 @@ function AAL_Alpha_Gamma_A() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = Math.sin((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    sinB.value = Math.sin((angleBeta.value * Math.PI) / 180).toFixed(3)
+    sinC.value = Math.sin((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 
 }
 
@@ -127,13 +163,13 @@ function AAL_Alpha_Gamma_C() {
 
     angleBetaRadians = angleBeta.value * (Math.PI / 180)
 
-    sinA = Math.sin(angleAlphaRadians)
-    sinB = Math.sin(angleBetaRadians)
-    sinC = Math.sin(angleGammaRadians)
+    sinnA = Math.sin(angleAlphaRadians)
+    sinnB = Math.sin(angleBetaRadians)
+    sinnC = Math.sin(angleGammaRadians)
 
-    coteB.value = (sinB / sinC * coteC.value).toFixed(3)
+    coteB.value = (sinnB / sinnC * coteC.value).toFixed(3)
 
-    coteA.value = (sinA / sinC * coteC.value).toFixed(3)
+    coteA.value = (sinnA / sinnC * coteC.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -155,6 +191,18 @@ function AAL_Alpha_Gamma_C() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = Math.sin((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    sinB.value = Math.sin((angleBeta.value * Math.PI) / 180).toFixed(3)
+    sinC.value = Math.sin((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 
 }
 
@@ -165,15 +213,15 @@ function AAL_Beta_Alpha_B() {
 
     angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
 
-    sinA = Math.sin(angleAlphaRadians)
-    sinB = Math.sin(angleBetaRadians)
+    sinnA = Math.sin(angleAlphaRadians)
+    sinnB = Math.sin(angleBetaRadians)
 
-    coteA.value = (sinA / sinB * coteB.value).toFixed(3)
+    coteA.value = (sinnA / sinnB * coteB.value).toFixed(3)
 
     angleGammaRadians = angleGamma.value * (Math.PI / 180)
-    sinC = Math.sin(angleGammaRadians)
+    sinnC = Math.sin(angleGammaRadians)
 
-    coteC.value = (sinC / sinA * coteA.value).toFixed(3)
+    coteC.value = (sinnC / sinnA * coteA.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -195,6 +243,18 @@ function AAL_Beta_Alpha_B() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = Math.sin((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    sinB.value = Math.sin((angleBeta.value * Math.PI) / 180).toFixed(3)
+    sinC.value = Math.sin((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 
 }
 
@@ -207,13 +267,13 @@ function AAL_Beta_Alpha_A() {
 
     angleGammaRadians = angleGamma.value * (Math.PI / 180)
 
-    sinA = Math.sin(angleAlphaRadians)
-    sinB = Math.sin(angleBetaRadians)
-    sinC = Math.sin(angleGammaRadians)
+    sinnA = Math.sin(angleAlphaRadians)
+    sinnB = Math.sin(angleBetaRadians)
+    sinnC = Math.sin(angleGammaRadians)
 
-    coteC.value = (sinC / sinA * coteA.value).toFixed(3)
+    coteC.value = (sinnC / sinnA * coteA.value).toFixed(3)
 
-    coteB.value = (sinB / sinC * coteC.value).toFixed(3)
+    coteB.value = (sinnB / sinnC * coteC.value).toFixed(3)
 
     // Formule de Héron pour trouver l'aire
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
@@ -236,5 +296,17 @@ function AAL_Beta_Alpha_A() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = Math.sin((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    sinB.value = Math.sin((angleBeta.value * Math.PI) / 180).toFixed(3)
+    sinC.value = Math.sin((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 
 }

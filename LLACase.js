@@ -2,19 +2,19 @@ function LLA_B_C_Beta() {
 
     angleBetaRadians = angleBeta.value * (Math.PI / 180)
 
-    sinB = Math.sin(angleBetaRadians)
+    sinnB = Math.sin(angleBetaRadians)
 
-    sinC = sinB / coteB.value * coteC.value
-    angleGammaRadians = Math.asin(sinC)
+    sinnC = sinnB / coteB.value * coteC.value
+    angleGammaRadians = Math.asin(sinnC)
     angleGammaDegrees = angleGammaRadians * (180 / Math.PI)
     angleGamma.value = angleGammaDegrees.toFixed(3)
 
     angleAlpha.value = (180 - angleGamma.value - angleBeta.value).toFixed(3)
     angleAlphaDegrees = angleAlpha.value / (180 / Math.PI)
 
-    sinA = Math.sin(angleAlphaDegrees)
+    sinnA = Math.sin(angleAlphaDegrees)
 
-    coteA.value = (sinA / sinB * coteB.value).toFixed(3)
+    coteA.value = (sinnA / sinnB * coteB.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -36,25 +36,37 @@ function LLA_B_C_Beta() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = sinnA.toFixed(3)
+    sinB.value = sinnB.toFixed(3)
+    sinC.value = sinnC.toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 }
 
 function LLA_B_C_Gamma() {
 
     angleGammaRadians = angleGamma.value * (Math.PI / 180)
 
-    sinC = Math.sin(angleGammaRadians)
+    sinnC = Math.sin(angleGammaRadians)
 
-    sinB = sinC / coteC.value * coteB.value
-    angleBetaRadians = Math.asin(sinB)
+    sinnB = sinnC / coteC.value * coteB.value
+    angleBetaRadians = Math.asin(sinnB)
     angleBetaDegrees = angleBetaRadians * (180 / Math.PI)
     angleBeta.value = angleBetaDegrees.toFixed(3)
 
     angleAlpha.value = (180 - angleGamma.value - angleBeta.value).toFixed(3)
     angleAlphaDegrees = angleAlpha.value / (180 / Math.PI)
 
-    sinA = Math.sin(angleAlphaDegrees)
+    sinnA = Math.sin(angleAlphaDegrees)
 
-    coteA.value = (sinA / sinC * coteC.value).toFixed(3)
+    coteA.value = (sinnA / sinnC * coteC.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -76,25 +88,37 @@ function LLA_B_C_Gamma() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = sinnA.toFixed(3)
+    sinB.value = sinnB.toFixed(3)
+    sinC.value = sinnC.toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 }
 
 function LLA_A_B_Alpha() {
 
     angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
 
-    sinA = Math.sin(angleAlphaRadians)
+    sinnA = Math.sin(angleAlphaRadians)
 
-    sinB = sinA / coteA.value * coteB.value
-    angleBetaRadians = Math.asin(sinB)
+    sinnB = sinnA / coteA.value * coteB.value
+    angleBetaRadians = Math.asin(sinnB)
     angleBetaDegrees = angleBetaRadians * (180 / Math.PI)
     angleBeta.value = angleBetaDegrees.toFixed(3)
 
     angleGamma.value = (180 - angleBeta.value - angleAlpha.value).toFixed(3)
     angleGammaDegrees = angleGamma.value / (180 / Math.PI)
 
-    sinC = Math.sin(angleGammaDegrees)
+    sinnC = Math.sin(angleGammaDegrees)
 
-    coteC.value = (sinC / sinA * coteA.value).toFixed(3)
+    coteC.value = (sinnC / sinnA * coteA.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -116,25 +140,37 @@ function LLA_A_B_Alpha() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = sinnA.toFixed(3)
+    sinB.value = sinnB.toFixed(3)
+    sinC.value = sinnC.toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 }
 
 function LLA_A_B_Beta() {
 
     angleBetaRadians = angleBeta.value * (Math.PI / 180)
 
-    sinB = Math.sin(angleBetaRadians)
+    sinnB = Math.sin(angleBetaRadians)
 
-    sinA = sinB / coteB.value * coteA.value
-    angleAlphaRadians = Math.asin(sinA)
+    sinnA = sinnB / coteB.value * coteA.value
+    angleAlphaRadians = Math.asin(sinnA)
     angleAlphaDegrees = angleAlphaRadians * (180 / Math.PI)
     angleAlpha.value = angleAlphaDegrees.toFixed(3)
 
     angleGamma.value = (180 - angleBeta.value - angleAlpha.value).toFixed(3)
     angleGammaDegrees = angleGamma.value / (180 / Math.PI)
 
-    sinC = Math.sin(angleGammaDegrees)
+    sinnC = Math.sin(angleGammaDegrees)
 
-    coteC.value = (sinC / sinB * coteB.value).toFixed(3)
+    coteC.value = (sinnC / sinnB * coteB.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -156,25 +192,37 @@ function LLA_A_B_Beta() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = sinnA.toFixed(3)
+    sinB.value = sinnB.toFixed(3)
+    sinC.value = sinnC.toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 }
 
 function LLA_C_A_Gamma() {
 
     angleGammaRadians = angleGamma.value * (Math.PI / 180)
 
-    sinC = Math.sin(angleGammaRadians)
+    sinnC = Math.sin(angleGammaRadians)
 
-    sinA = sinC / coteC.value * coteA.value
-    angleAlphaRadians = Math.asin(sinA)
+    sinnA = sinnC / coteC.value * coteA.value
+    angleAlphaRadians = Math.asin(sinnA)
     angleAlphaDegrees = angleAlphaRadians * (180 / Math.PI)
     angleAlpha.value = angleAlphaDegrees.toFixed(3)
 
     angleBeta.value = (180 - angleGamma.value - angleAlpha.value).toFixed(3)
     angleBetaDegrees = angleBeta.value / (180 / Math.PI)
 
-    sinB = Math.sin(angleBetaDegrees)
+    sinnB = Math.sin(angleBetaDegrees)
 
-    coteB.value = (sinB / sinC * coteC.value).toFixed(3)
+    coteB.value = (sinnB / sinnC * coteC.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -196,25 +244,37 @@ function LLA_C_A_Gamma() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = sinnA.toFixed(3)
+    sinB.value = sinnB.toFixed(3)
+    sinC.value = sinnC.toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 }
 
 function LLA_C_A_Alpha() {
 
     angleAlphaRadians = angleAlpha.value * (Math.PI / 180)
 
-    sinA = Math.sin(angleAlphaRadians)
+    sinnA = Math.sin(angleAlphaRadians)
 
-    sinC = sinA / coteA.value * coteC.value
-    angleGammaRadians = Math.asin(sinC)
+    sinnC = sinnA / coteA.value * coteC.value
+    angleGammaRadians = Math.asin(sinnC)
     angleGammaDegrees = angleGammaRadians * (180 / Math.PI)
     angleGamma.value = angleGammaDegrees.toFixed(3)
 
     angleBeta.value = (180 - angleGamma.value - angleAlpha.value).toFixed(3)
     angleBetaDegrees = angleBeta.value / (180 / Math.PI)
 
-    sinB = Math.sin(angleBetaDegrees)
+    sinnB = Math.sin(angleBetaDegrees)
 
-    coteB.value = (sinB / sinC * coteC.value).toFixed(3)
+    coteB.value = (sinnB / sinnC * coteC.value).toFixed(3)
 
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2
 
@@ -236,4 +296,16 @@ function LLA_C_A_Alpha() {
     bissectriceA.value = (Math.sqrt(coteB.value * coteC.value * (1 - coteA.value ** 2 / (Number(coteB.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
+
+    cosiA.value = Math.cos((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    cosiB.value = Math.cos((angleBeta.value * Math.PI) / 180).toFixed(3)
+    cosiC.value = Math.cos((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    sinA.value = sinnA.toFixed(3)
+    sinB.value = sinnB.toFixed(3)
+    sinC.value = sinnC.toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 }

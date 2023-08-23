@@ -39,6 +39,18 @@ function LLL() {
     bissectriceB.value = (Math.sqrt(coteA.value * coteC.value * (1 - coteB.value ** 2 / (Number(coteA.value) + Number(coteC.value)) ** 2))).toFixed(3)
     bissectriceC.value = (Math.sqrt(coteA.value * coteB.value * (1 - coteC.value ** 2 / (Number(coteA.value) + Number(coteB.value)) ** 2))).toFixed(3)
 
+    cosiA.value = cosA.toFixed(3)
+    cosiB.value = cosB.toFixed(3)
+    cosiC.value = cosC.toFixed(3)
+
+    sinA.value = Math.sin((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    sinB.value = Math.sin((angleBeta.value * Math.PI) / 180).toFixed(3)
+    sinC.value = Math.sin((angleGamma.value * Math.PI) / 180).toFixed(3)
+
+    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
+
 
     // Arrondi des valeurs pour utilisation ultérieure
     cosAMath = cosA.toFixed(3);
