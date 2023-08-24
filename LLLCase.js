@@ -12,10 +12,9 @@ function LLL() {
     angleBetaDegrees = (angleBetaRadians * 180) / Math.PI;
     angleBeta.value = angleBetaDegrees.toFixed(3);
 
-    cosC = (coteA.value ** 2 + coteB.value ** 2 - coteC.value ** 2) / (2 * coteA.value * coteB.value);
-    angleGamma.value = (180 - angleAlpha.value - angleBeta.value).toFixed(3);
-    angleGammaRadians = Math.acos(cosC);
-    angleGammaDegrees = (angleGammaRadians * 180) / Math.PI;
+    angleGammaDegrees = (180 - angleAlpha.value - angleBeta.value)
+    angleGamma.value = angleGammaDegrees.toFixed(3)
+    cosC = Math.cos((angleGamma.value * Math.PI) / 180)
 
     // Formule de Héron pour calculer l'aire
     demiP = (Number(coteC.value) + Number(coteB.value) + Number(coteA.value)) / 2;
@@ -55,6 +54,7 @@ function LLL() {
     // Arrondi des valeurs pour utilisation ultérieure
     cosAMath = cosA.toFixed(3);
     cosBMath = cosB.toFixed(3);
+    cosCMath = cosC.toFixed(3);
     acar = coteA.value ** 2;
     bcar = coteB.value ** 2;
     ccar = coteC.value ** 2;
@@ -63,5 +63,12 @@ function LLL() {
     cValueE = coteC.value;
     angleADG = angleAlphaDegrees.toFixed(3);
     angleBDG = angleBetaDegrees.toFixed(3);
+    angleCDG = angleGammaDegrees.toFixed(3)
     demiPEq = demiP.toFixed(3);
+    sinAMath = sinA
+    sinBMath = sinB
+    sinCMath = sinC
+    tanAMath = tanA
+    tanBMath = tanB
+    tanCMath = tanC
 }
