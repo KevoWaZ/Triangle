@@ -56,17 +56,17 @@ function LLLEquation() {
     // Hauteur
     let hautA = document.createElement("h1")
     hautA.id = "hautA"
-    hautA.innerHTML = `\\(h_{a} = A * 2 / a = ${hauteurA.value}\\)`
+    hautA.innerHTML = `\\(h_{a} = A \\times 2 / a = ${hauteurA.value}\\)`
     ajout.appendChild(hautA)
 
     let hautB = document.createElement("h1")
     hautB.id = "hautB"
-    hautB.innerHTML = `\\(h_{b} = A * 2 / b = ${hauteurB.value}\\)`
+    hautB.innerHTML = `\\(h_{b} = A \\times 2 / b = ${hauteurB.value}\\)`
     ajout.appendChild(hautB)
 
     let hautC = document.createElement("h1")
     hautC.id = "hautB"
-    hautC.innerHTML = `\\(h_{a} = A * 2 / c = ${hauteurC.value}\\)`
+    hautC.innerHTML = `\\(h_{a} = A \\times 2 / c = ${hauteurC.value}\\)`
     ajout.appendChild(hautC)
 
     // Médiane
