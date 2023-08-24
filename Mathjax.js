@@ -53,6 +53,7 @@ function LLLEquation() {
     AirV.innerHTML = `\\(A=\\sqrt{(s(s-a)(s-b)(s-b))}=${aire.value}\\)`
     ajout.appendChild(AirV)
 
+    // Hauteur
     let hautA = document.createElement("h1")
     hautA.id = "hautA"
     hautA.innerHTML = `\\(h_{a} = A * 2 / a = ${hauteurA.value}\\)`
@@ -68,6 +69,7 @@ function LLLEquation() {
     hautC.innerHTML = `\\(h_{a} = A * 2 / c = ${hauteurC.value}\\)`
     ajout.appendChild(hautC)
 
+    // Médiane
     let medA = document.createElement("h1")
     medA.id = "medA"
     medA.innerHTML = `\\(m_{a} = \\frac{1}{2}\\sqrt{2b²+2c²-a²} = ${medianeA.value}\\)`
@@ -83,6 +85,7 @@ function LLLEquation() {
     medC.innerHTML = `\\(m_{c} = \\frac{1}{2}\\sqrt{2a²+2b²-c²} = ${medianeC.value}\\)`
     ajout.appendChild(medC)
 
+    // Bisséctrice
     let bisA = document.createElement("h1")
     bisA.id = "bisA"
     bisA.innerHTML = `\\(I_{a} = \\sqrt{bc(1-\\frac{a²}{(b+c)²})} = ${bissectriceA.value}\\)`
@@ -98,6 +101,7 @@ function LLLEquation() {
     bisC.innerHTML = `\\(I_{c} = \\sqrt{ab(1-\\frac{c²}{(a+b)²})} = ${bissectriceC.value}\\)`
     ajout.appendChild(bisC)
 
+    // Sinus
     let sinA = document.createElement("h1")
     sinA.id = "sinA"
     sinA.innerHTML = `\\(\\sin \\alpha = \sin(${angleADG}) =${sinAMath.value}\\)`
@@ -113,6 +117,7 @@ function LLLEquation() {
     sinC.innerHTML = `\\(\\sin \\gamma = \sin(${angleCDG}) =${sinCMath.value}\\)`
     ajout.append(sinC)
 
+    // tangente
     let tanA = document.createElement("h1")
     tanA.id = "tanA"
     tanA.innerHTML = `\\(\\tan \\alpha = \tan(${angleADG}) =${tanAMath.value}\\)`
