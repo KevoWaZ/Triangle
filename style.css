@@ -27,6 +27,12 @@ body {
     overflow: inherit;
 }
 
+@media screen and (max-width: 1756px) {
+    body {
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 882px) {
     .equation {
         font-size: 7px;
