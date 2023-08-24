@@ -27,7 +27,7 @@ body {
     overflow: inherit;
 }
 
-@media screen and (max-width: 1756px) {
+@media screen and (max-width: 1272px) {
     body {
         flex-direction: column;
     }
@@ -54,4 +54,10 @@ input {
     align-items: center;
     justify-content: center;
     
+}
+
+
+.buttonL {
+    display: flex;
+    flex-direction: column;
 }
