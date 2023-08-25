@@ -5,7 +5,7 @@ function LLL() {
     cosA = ((-Math.pow(coteA.value, 2)) + coteB.value ** 2 + coteC.value ** 2) / (2 * coteB.value * coteC.value);
     angleAlphaRadians = Math.acos(cosA);
     angleAlphaDegrees = (angleAlphaRadians * 180) / Math.PI;
-    angleAlpha.value = angleAlphaDegrees.toFixed(3);
+    angleAlpha.value = parseFloat(angleAlphaDegrees).toFixed(3);
 
     cosB = (coteA.value ** 2 - coteB.value ** 2 + coteC.value ** 2) / (2 * coteC.value * coteA.value);
     angleBetaRadians = Math.acos(cosB);
@@ -46,7 +46,12 @@ function LLL() {
     sinB.value = Math.sin((angleBeta.value * Math.PI) / 180).toFixed(3)
     sinC.value = Math.sin((angleGamma.value * Math.PI) / 180).toFixed(3)
 
-    tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    if (Math.abs(angleAlpha.value - 90) < 0.001) {
+        alert("La tangente de 90 et infini")
+    } else {
+        tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
+    }
+
     tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
     tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
 
