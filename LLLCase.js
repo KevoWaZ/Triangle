@@ -47,13 +47,25 @@ function LLL() {
     sinC.value = Math.sin((angleGamma.value * Math.PI) / 180).toFixed(3)
 
     if (Math.abs(angleAlpha.value - 90) < 0.001) {
-        alert("La tangente de 90 et infini")
+        tanA.type = "text"
+        tanA.value = "∞"
     } else {
         tanA.value = Math.tan((angleAlpha.value * Math.PI) / 180).toFixed(3)
     }
 
-    tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
-    tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
+    if (Math.abs(angleBeta.value - 90) < 0.001) {
+        tanB.type = "text"
+        tanB.value = "∞"
+    } else {
+        tanB.value = Math.tan((angleBeta.value * Math.PI) / 180).toFixed(3)
+    }
+
+    if (Math.abs(angleGamma.value - 90) < 0.001) {
+        tanC.type = "text"
+        tanC.value = "∞"
+    } else {
+        tanC.value = Math.tan((angleGamma.value * Math.PI) / 180).toFixed(3)
+    }
 
 
     // Arrondi des valeurs pour utilisation ultérieure
