@@ -34,14 +34,9 @@ body {
     }
 }
 
-@media screen and (max-width: 882px) {
+@media screen and (max-width: 500px) {
     .equation {
-        font-size: 7px;
-    }
-}
-@media screen and (max-width: 412px) {
-    .equation {
-        font-size: 6px;
+        font-size: 14px;
     }
 }
 
