@@ -34,6 +34,8 @@ let btnAAL = document.getElementById("calculAAL")
 let btnChercher = document.getElementById("chercher")
 let btnReset = document.getElementById("reset")
 
+let Tau = Math.PI * 2
+
 
 btn3C.onclick = function () {
     LLL()
@@ -121,10 +123,30 @@ btnReset.onclick = function () {
         angleAlpha.value = ""
         angleBeta.value = ""
         angleGamma.value = ""
+        cosiA.value = ""
+        cosiB.value = ""
+        cosiC.value = ""
+        sinA.value = ""
+        sinB.value = ""
+        sinC.value = ""
+        tanA.value = ""
+        tanB.value = ""
+        tanC.value = ""
+        medianeA.value = ""
+        medianeB.value = ""
+        medianeC.value = ""
+        bissectriceA.value = ""
+        bissectriceB.value = ""
+        bissectriceC.value = ""
+        demiPeri.value = ""
+        perimetre.value = ""
+        aire.value = ""
         hauteurA.value = ""
         hauteurB.value = ""
         hauteurC.value = ""
-        aire.value = ""
+
+        let ajout = document.querySelector('.equation');
+        ajout.innerHTML = "";
 }
 
 
